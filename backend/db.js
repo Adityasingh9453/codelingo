@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dbPath =
   process.env.NODE_ENV === "production"
-    ? "/data/codelingo.db"
+    ? "/tmp/codelingo.db"
     : path.join(__dirname, "codelingo.db");
 const db = new DatabaseSync(dbPath);
 db.exec("PRAGMA journal_mode = WAL;");
