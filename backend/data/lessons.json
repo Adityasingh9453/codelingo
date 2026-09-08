@@ -1,0 +1,742 @@
+{
+  "tracks": [
+    {
+      "id": "c",
+      "name": "C",
+      "tagline": "Learn the language machines speak",
+      "color": "#F2A65A",
+      "units": [
+        {
+          "id": "c-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "c-u1-l1",
+              "title": "Hello, Compiler",
+              "questions": [
+                {
+                  "id": "c-u1-l1-q1",
+                  "type": "mcq",
+                  "prompt": "Which header do you need to use printf() in C?",
+                  "options": ["#include <stdio.h>", "#include <string.h>", "#include <stdlib.h>", "#include <print.h>"],
+                  "answer": "#include <stdio.h>",
+                  "explanation": "stdio.h declares standard input/output functions like printf and scanf."
+                },
+                {
+                  "id": "c-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "Every C program must have exactly one function named:",
+                  "options": ["start", "main", "init", "run"],
+                  "answer": "main",
+                  "explanation": "main() is the entry point the operating system calls to run your program."
+                },
+                {
+                  "id": "c-u1-l1-q3",
+                  "type": "fill_blank",
+                  "prompt": "int ____() {\n    printf(\"Hello, World!\");\n    return 0;\n}",
+                  "options": ["main", "void", "hello", "start"],
+                  "answer": "main",
+                  "explanation": "The function signature int main() defines the program's entry point."
+                },
+                {
+                  "id": "c-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "printf(\"Hi\")____",
+                  "options": [";", ":", ".", ","],
+                  "answer": ";",
+                  "explanation": "Every C statement ends with a semicolon."
+                }
+              ]
+            },
+            {
+              "id": "c-u1-l2",
+              "title": "Variables & Types",
+              "questions": [
+                {
+                  "id": "c-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Which type holds a single character in C?",
+                  "options": ["char", "string", "text", "letter"],
+                  "answer": "char",
+                  "explanation": "char stores a single byte, typically one character."
+                },
+                {
+                  "id": "c-u1-l2-q2",
+                  "type": "mcq",
+                  "prompt": "What does this declare? float price = 9.99;",
+                  "options": [
+                    "A floating-point variable named price",
+                    "A function named price",
+                    "A constant named float",
+                    "An integer named price"
+                  ],
+                  "answer": "A floating-point variable named price",
+                  "explanation": "float declares a decimal number variable, here initialized to 9.99."
+                },
+                {
+                  "id": "c-u1-l2-q3",
+                  "type": "fill_blank",
+                  "prompt": "____ age = 25;",
+                  "options": ["int", "String", "def", "let"],
+                  "answer": "int",
+                  "explanation": "int is the C keyword for a whole-number variable."
+                },
+                {
+                  "id": "c-u1-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "int x = 5;\nint y = 10;\nint sum = x ____ y;",
+                  "options": ["+", "&&", "->", "::"],
+                  "answer": "+",
+                  "explanation": "The + operator adds two integers together."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c-u2",
+          "title": "Control Flow",
+          "lessons": [
+            {
+              "id": "c-u2-l1",
+              "title": "If & Else",
+              "questions": [
+                {
+                  "id": "c-u2-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "if (score >= 60) ____\n    printf(\"Pass\");\n} else {\n    printf(\"Fail\");\n}",
+                  "options": ["{", "then", ":", "do"],
+                  "answer": "{",
+                  "explanation": "C uses curly braces { } to open a block after an if condition."
+                },
+                {
+                  "id": "c-u2-l1-q2",
+                  "type": "mcq",
+                  "prompt": "Which operator checks equality (not assignment) in C?",
+                  "options": ["==", "=", "!=", ":="],
+                  "answer": "==",
+                  "explanation": "== compares two values; = assigns a value."
+                },
+                {
+                  "id": "c-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "What does != mean in C?",
+                  "options": ["not equal to", "not defined", "negative", "factorial"],
+                  "answer": "not equal to",
+                  "explanation": "!= is the 'not equal' comparison operator."
+                },
+                {
+                  "id": "c-u2-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "for (int i = 0; i < 5; i____) {\n    printf(\"%d\", i);\n}",
+                  "options": ["++", "--", "**", "//"],
+                  "answer": "++",
+                  "explanation": "i++ increments i by 1 after each loop iteration."
+                }
+              ]
+            },
+            {
+              "id": "c-u2-l2",
+              "title": "Loops",
+              "questions": [
+                {
+                  "id": "c-u2-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Which loop is guaranteed to run its body at least once?",
+                  "options": ["do-while", "while", "for", "if"],
+                  "answer": "do-while",
+                  "explanation": "do { ... } while(condition); checks the condition after running the body."
+                },
+                {
+                  "id": "c-u2-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "int i = 0;\n____ (i < 3) {\n    printf(\"%d\", i);\n    i++;\n}",
+                  "options": ["while", "for", "loop", "repeat"],
+                  "answer": "while",
+                  "explanation": "while(condition) repeats the block as long as the condition is true."
+                },
+                {
+                  "id": "c-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What keyword immediately exits a loop in C?",
+                  "options": ["break", "stop", "exit", "return"],
+                  "answer": "break",
+                  "explanation": "break immediately terminates the nearest enclosing loop or switch."
+                },
+                {
+                  "id": "c-u2-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "for (int i = 0; i < 10; i++) {\n    if (i == 5) ____;\n    printf(\"%d\", i);\n}",
+                  "options": ["break", "class", "import", "def"],
+                  "answer": "break",
+                  "explanation": "break stops the loop as soon as i equals 5."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "tagline": "C, with superpowers",
+      "color": "#6C8CFF",
+      "units": [
+        {
+          "id": "cpp-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "cpp-u1-l1",
+              "title": "Hello, std::cout",
+              "questions": [
+                {
+                  "id": "cpp-u1-l1-q1",
+                  "type": "mcq",
+                  "prompt": "Which header provides std::cout in C++?",
+                  "options": ["<iostream>", "<stdio.h>", "<cstd>", "<print>"],
+                  "answer": "<iostream>",
+                  "explanation": "<iostream> declares the standard input/output stream objects."
+                },
+                {
+                  "id": "cpp-u1-l1-q2",
+                  "type": "fill_blank",
+                  "prompt": "std::cout ____ \"Hello, World!\";",
+                  "options": ["<<", ">>", "->", "::"],
+                  "answer": "<<",
+                  "explanation": "The << (insertion) operator sends data into the output stream."
+                },
+                {
+                  "id": "cpp-u1-l1-q3",
+                  "type": "mcq",
+                  "prompt": "What does 'using namespace std;' let you do?",
+                  "options": [
+                    "Drop the std:: prefix before names like cout",
+                    "Import a file",
+                    "Define a new namespace called std",
+                    "Compile faster"
+                  ],
+                  "answer": "Drop the std:: prefix before names like cout",
+                  "explanation": "It brings everything in the std namespace into scope, so you can write cout instead of std::cout."
+                },
+                {
+                  "id": "cpp-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "int main() ____\n    std::cout << \"Hi\";\n    return 0;\n}",
+                  "options": ["{", ";", "->", "begin"],
+                  "answer": "{",
+                  "explanation": "Curly braces open the function body, just like in C."
+                }
+              ]
+            },
+            {
+              "id": "cpp-u1-l2",
+              "title": "Variables & References",
+              "questions": [
+                {
+                  "id": "cpp-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Which keyword declares a constant in C++?",
+                  "options": ["const", "final", "fixed", "static"],
+                  "answer": "const",
+                  "explanation": "const marks a variable as unmodifiable after initialization."
+                },
+                {
+                  "id": "cpp-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "int x = 10;\nint& ref = ____;",
+                  "options": ["x", "&x", "*x", "int"],
+                  "answer": "x",
+                  "explanation": "int& ref = x; makes ref an alias that refers directly to x."
+                },
+                {
+                  "id": "cpp-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What does the & symbol mean when placed after a type, e.g. int&?",
+                  "options": ["It declares a reference", "It declares a pointer", "It multiplies", "It's a comment"],
+                  "answer": "It declares a reference",
+                  "explanation": "In C++, & after a type declares a reference variable (an alias to another variable)."
+                },
+                {
+                  "id": "cpp-u1-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "std::string name = ____Ada Lovelace\";",
+                  "options": ["\"", "'", "`", "<"],
+                  "answer": "\"",
+                  "explanation": "C++ string literals are wrapped in double quotes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cpp-u2",
+          "title": "Functions & Classes",
+          "lessons": [
+            {
+              "id": "cpp-u2-l1",
+              "title": "Writing Functions",
+              "questions": [
+                {
+                  "id": "cpp-u2-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "int add(int a, int b) {\n    ____ a + b;\n}",
+                  "options": ["return", "give", "output", "yield"],
+                  "answer": "return",
+                  "explanation": "return sends the computed value back to the caller."
+                },
+                {
+                  "id": "cpp-u2-l1-q2",
+                  "type": "mcq",
+                  "prompt": "In 'int add(int a, int b)', what does the first 'int' specify?",
+                  "options": [
+                    "The return type of the function",
+                    "The name of the function",
+                    "The type of parameter a",
+                    "A namespace"
+                  ],
+                  "answer": "The return type of the function",
+                  "explanation": "The type before the function name declares what type of value it returns."
+                },
+                {
+                  "id": "cpp-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "A function declared with return type 'void' means:",
+                  "options": ["It returns nothing", "It returns 0", "It returns null", "It never runs"],
+                  "answer": "It returns nothing",
+                  "explanation": "void indicates the function performs an action but returns no value."
+                },
+                {
+                  "id": "cpp-u2-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "void greet() {\n    std::cout << \"Hi\";\n}____",
+                  "options": ["", ";", ":", "!"],
+                  "answer": "",
+                  "explanation": "A function definition's closing brace needs no trailing semicolon (unlike a declaration)."
+                }
+              ]
+            },
+            {
+              "id": "cpp-u2-l2",
+              "title": "Classes 101",
+              "questions": [
+                {
+                  "id": "cpp-u2-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Which keyword defines a new class in C++?",
+                  "options": ["class", "struct only", "object", "type"],
+                  "answer": "class",
+                  "explanation": "class Name { ... }; defines a new class blueprint."
+                },
+                {
+                  "id": "cpp-u2-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "class Dog {\npublic:\n    void bark() {\n        std::cout << \"Woof\";\n    }\n};\n\nDog d;\nd.____();",
+                  "options": ["bark", "Dog", "class", "public"],
+                  "answer": "bark",
+                  "explanation": "d.bark() calls the bark method on the object d."
+                },
+                {
+                  "id": "cpp-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What does 'public:' control inside a class?",
+                  "options": [
+                    "Which members are accessible from outside the class",
+                    "Which members run first",
+                    "Whether the class compiles",
+                    "The class's memory size"
+                  ],
+                  "answer": "Which members are accessible from outside the class",
+                  "explanation": "Access specifiers like public/private control visibility of members outside the class."
+                },
+                {
+                  "id": "cpp-u2-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "Dog ____ = Dog();",
+                  "options": ["myDog", "new Dog", "Dog()", "->dog"],
+                  "answer": "myDog",
+                  "explanation": "This creates an object named myDog of type Dog."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "tagline": "Readable code, fast progress",
+      "color": "#F5C242",
+      "units": [
+        {
+          "id": "py-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "py-u1-l1",
+              "title": "Hello, Python",
+              "questions": [
+                {
+                  "id": "py-u1-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "____(\"Hello, World!\")",
+                  "options": ["print", "echo", "printf", "console.log"],
+                  "answer": "print",
+                  "explanation": "print() outputs text to the console in Python."
+                },
+                {
+                  "id": "py-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "Which symbol starts a comment in Python?",
+                  "options": ["#", "//", "<!--", "--"],
+                  "answer": "#",
+                  "explanation": "Everything after # on a line is treated as a comment."
+                },
+                {
+                  "id": "py-u1-l1-q3",
+                  "type": "mcq",
+                  "prompt": "Python uses ____ to define blocks of code instead of curly braces.",
+                  "options": ["indentation", "semicolons", "parentheses", "tags"],
+                  "answer": "indentation",
+                  "explanation": "Consistent indentation (spaces) defines code blocks in Python."
+                },
+                {
+                  "id": "py-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "name = ____World\"\nprint(name)",
+                  "options": ["\"", "'''", "<", "("],
+                  "answer": "\"",
+                  "explanation": "This string starts with a double quote, so it must also end with one."
+                }
+              ]
+            },
+            {
+              "id": "py-u1-l2",
+              "title": "Variables & Types",
+              "questions": [
+                {
+                  "id": "py-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Do you need to declare a variable's type in Python?",
+                  "options": ["No, types are inferred automatically", "Yes, always", "Only for numbers", "Only for strings"],
+                  "answer": "No, types are inferred automatically",
+                  "explanation": "Python is dynamically typed — you just assign a value and Python infers the type."
+                },
+                {
+                  "id": "py-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "age = 25\nname = \"Sam\"\nprint(name, ____, age)",
+                  "options": ["\"is\"", "is", "= is =", "and"],
+                  "answer": "\"is\"",
+                  "explanation": "String literals in a print() call must be quoted."
+                },
+                {
+                  "id": "py-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What type is the value produced by 3 / 2 in Python 3?",
+                  "options": ["float (1.5)", "int (1)", "string", "error"],
+                  "answer": "float (1.5)",
+                  "explanation": "The / operator always performs true division and returns a float in Python 3."
+                },
+                {
+                  "id": "py-u1-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "items = ____\nitems.append(\"apple\")",
+                  "options": ["[]", "{}", "()", "<>"],
+                  "answer": "[]",
+                  "explanation": "Square brackets [] create an empty list in Python."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "py-u2",
+          "title": "Control Flow",
+          "lessons": [
+            {
+              "id": "py-u2-l1",
+              "title": "If & Else",
+              "questions": [
+                {
+                  "id": "py-u2-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "if score >= 60____\n    print(\"Pass\")\nelse:\n    print(\"Fail\")",
+                  "options": [":", "{", ";", "then"],
+                  "answer": ":",
+                  "explanation": "Python uses a colon to start a block, followed by an indented line."
+                },
+                {
+                  "id": "py-u2-l1-q2",
+                  "type": "mcq",
+                  "prompt": "Which keyword checks another condition after an initial 'if' fails?",
+                  "options": ["elif", "elseif", "else if", "orif"],
+                  "answer": "elif",
+                  "explanation": "Python's keyword for 'else if' is elif."
+                },
+                {
+                  "id": "py-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "What does 'and' do between two conditions in Python?",
+                  "options": [
+                    "True only if both conditions are true",
+                    "True if either condition is true",
+                    "Negates the condition",
+                    "Adds the two conditions"
+                  ],
+                  "answer": "True only if both conditions are true",
+                  "explanation": "The 'and' logical operator requires both sides to be true."
+                },
+                {
+                  "id": "py-u2-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "for i in ____(5):\n    print(i)",
+                  "options": ["range", "loop", "iter", "count"],
+                  "answer": "range",
+                  "explanation": "range(5) generates numbers 0 through 4 for the loop to iterate over."
+                }
+              ]
+            },
+            {
+              "id": "py-u2-l2",
+              "title": "Loops & Functions",
+              "questions": [
+                {
+                  "id": "py-u2-l2-q1",
+                  "type": "fill_blank",
+                  "prompt": "____ greet(name):\n    print(\"Hi\", name)",
+                  "options": ["def", "function", "func", "lambda"],
+                  "answer": "def",
+                  "explanation": "def defines a new function in Python."
+                },
+                {
+                  "id": "py-u2-l2-q2",
+                  "type": "mcq",
+                  "prompt": "Which loop keeps running while a condition stays true?",
+                  "options": ["while", "for", "loop", "repeat"],
+                  "answer": "while",
+                  "explanation": "while condition: repeats its block as long as the condition is true."
+                },
+                {
+                  "id": "py-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What does 'continue' do inside a loop?",
+                  "options": [
+                    "Skips to the next iteration",
+                    "Ends the loop completely",
+                    "Restarts the program",
+                    "Pauses execution"
+                  ],
+                  "answer": "Skips to the next iteration",
+                  "explanation": "continue skips the rest of the current iteration and moves to the next one."
+                },
+                {
+                  "id": "py-u2-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "def add(a, b):\n    ____ a + b\n\nprint(add(2, 3))",
+                  "options": ["return", "give", "print", "output"],
+                  "answer": "return",
+                  "explanation": "return sends the result back to wherever the function was called."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "tagline": "Write once, run anywhere",
+      "color": "#E2725B",
+      "units": [
+        {
+          "id": "java-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "java-u1-l1",
+              "title": "Hello, JVM",
+              "questions": [
+                {
+                  "id": "java-u1-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "public class Main {\n    public static void main(String[] args) {\n        System.out.____(\"Hello, World!\");\n    }\n}",
+                  "options": ["println", "print()", "write", "log"],
+                  "answer": "println",
+                  "explanation": "System.out.println() prints text followed by a new line."
+                },
+                {
+                  "id": "java-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "In Java, the filename (e.g. Main.java) must match:",
+                  "options": [
+                    "The name of its public class",
+                    "The name of the main method",
+                    "The project folder name",
+                    "Nothing in particular"
+                  ],
+                  "answer": "The name of its public class",
+                  "explanation": "Java requires the file name to match the public class it contains."
+                },
+                {
+                  "id": "java-u1-l1-q3",
+                  "type": "mcq",
+                  "prompt": "Which method signature is the required entry point of a Java program?",
+                  "options": [
+                    "public static void main(String[] args)",
+                    "public void main()",
+                    "static main()",
+                    "def main():"
+                  ],
+                  "answer": "public static void main(String[] args)",
+                  "explanation": "The JVM looks specifically for this exact main method signature to start the program."
+                },
+                {
+                  "id": "java-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "System.out.println(\"Hi\")____",
+                  "options": [";", ".", ":", ","],
+                  "answer": ";",
+                  "explanation": "Like C and C++, every Java statement ends with a semicolon."
+                }
+              ]
+            },
+            {
+              "id": "java-u1-l2",
+              "title": "Variables & Types",
+              "questions": [
+                {
+                  "id": "java-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "Which type holds whole numbers in Java?",
+                  "options": ["int", "String", "boolean", "double"],
+                  "answer": "int",
+                  "explanation": "int stores whole (integer) numbers in Java."
+                },
+                {
+                  "id": "java-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "____ name = \"Ada\";",
+                  "options": ["String", "string", "str", "text"],
+                  "answer": "String",
+                  "explanation": "Java's text type is capitalized: String."
+                },
+                {
+                  "id": "java-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "What values can a boolean hold in Java?",
+                  "options": ["true or false", "0 to 9", "yes or no as text", "any number"],
+                  "answer": "true or false",
+                  "explanation": "boolean is a two-value type: true or false."
+                },
+                {
+                  "id": "java-u1-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "final ____ PI = 3.14;",
+                  "options": ["double", "String", "void", "class"],
+                  "answer": "double",
+                  "explanation": "double stores decimal numbers; final marks PI as unchangeable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "java-u2",
+          "title": "Control Flow",
+          "lessons": [
+            {
+              "id": "java-u2-l1",
+              "title": "If & Loops",
+              "questions": [
+                {
+                  "id": "java-u2-l1-q1",
+                  "type": "fill_blank",
+                  "prompt": "if (score >= 60) ____\n    System.out.println(\"Pass\");\n}",
+                  "options": ["{", "then", ":", "do"],
+                  "answer": "{",
+                  "explanation": "Java uses curly braces to open a block after an if condition, like C and C++."
+                },
+                {
+                  "id": "java-u2-l1-q2",
+                  "type": "mcq",
+                  "prompt": "Which loop is ideal when you know exactly how many times to repeat?",
+                  "options": ["for", "while", "do-while", "if"],
+                  "answer": "for",
+                  "explanation": "A for loop's structure (init; condition; update) is built for a known number of iterations."
+                },
+                {
+                  "id": "java-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "What does the && operator require?",
+                  "options": [
+                    "Both conditions must be true",
+                    "At least one condition must be true",
+                    "Neither condition is true",
+                    "Exactly one condition is true"
+                  ],
+                  "answer": "Both conditions must be true",
+                  "explanation": "&& is Java's logical AND — it requires both sides to be true."
+                },
+                {
+                  "id": "java-u2-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "for (int i = 0; i < 5; i++) {\n    System.out.println(i);\n____",
+                  "options": ["}", ";", "end", "done"],
+                  "answer": "}",
+                  "explanation": "A closing curly brace ends the for loop's block."
+                }
+              ]
+            },
+            {
+              "id": "java-u2-l2",
+              "title": "Methods 101",
+              "questions": [
+                {
+                  "id": "java-u2-l2-q1",
+                  "type": "fill_blank",
+                  "prompt": "public static int add(int a, int b) {\n    ____ a + b;\n}",
+                  "options": ["return", "give", "yield", "output"],
+                  "answer": "return",
+                  "explanation": "return sends the computed value back to whatever called the method."
+                },
+                {
+                  "id": "java-u2-l2-q2",
+                  "type": "mcq",
+                  "prompt": "What does 'static' mean on a method like main()?",
+                  "options": [
+                    "It belongs to the class itself, not an object instance",
+                    "It cannot change",
+                    "It runs only once ever",
+                    "It's private"
+                  ],
+                  "answer": "It belongs to the class itself, not an object instance",
+                  "explanation": "static methods belong to the class and can be called without creating an object."
+                },
+                {
+                  "id": "java-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "A method with return type 'void' means:",
+                  "options": ["It returns nothing", "It returns 0", "It returns null", "It has no parameters"],
+                  "answer": "It returns nothing",
+                  "explanation": "void means the method performs an action but sends no value back."
+                },
+                {
+                  "id": "java-u2-l2-q4",
+                  "type": "fill_blank",
+                  "prompt": "int result = add(2, 3____",
+                  "options": [")", "]", "}", ";"],
+                  "answer": ")",
+                  "explanation": "The closing parenthesis matches the opening one from add(2, 3."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

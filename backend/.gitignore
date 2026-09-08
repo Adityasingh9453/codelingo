@@ -1,0 +1,4 @@
+node_modules/
+codelingo.db
+codelingo.db-shm
+codelingo.db-wal

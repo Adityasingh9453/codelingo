@@ -1,0 +1,7 @@
+node_modules/
+dist/
+codelingo.db
+codelingo.db-shm
+codelingo.db-wal
+.env
+.DS_Store
