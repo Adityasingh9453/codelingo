@@ -33,89 +33,94 @@ export default function Register() {
   }
 
   return (
-    <div className="min-h-screen bg-ink flex items-center justify-center px-5">
-      <div
-        className="w-full max-w-sm"
-        style={{ animation: "slide-up-fade 0.5s ease-out both" }}
-      >
-        {/* Logo */}
-        <div className="mb-10 text-center">
-          <h1 className="font-display text-4xl font-black text-offwhite tracking-tight">
-            {"<"}CodeLingo{"/>"}
-          </h1>
-          <p className="mt-2 font-body text-sm text-muted">
-            Start your coding journey today
+    <div className="min-h-screen bg-ink flex flex-col">
+      {/* Centered form area — takes all remaining space */}
+      <div className="flex-1 flex items-center justify-center px-5 py-10">
+        <div
+          className="w-full max-w-sm"
+          style={{ animation: "slide-up-fade 0.5s ease-out both" }}
+        >
+          {/* Logo */}
+          <div className="mb-10 text-center">
+            <h1 className="font-display text-4xl font-black text-offwhite tracking-tight">
+              {"<"}CodeLingo{"/>"}
+            </h1>
+            <p className="mt-2 font-body text-sm text-muted">
+              Start your coding journey today
+            </p>
+          </div>
+
+          {/* Card */}
+          <div className="rounded-2xl border border-line bg-surface p-6">
+            <h2 className="font-display text-xl font-bold text-offwhite mb-6">
+              Create your account 🚀
+            </h2>
+
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="block font-mono text-xs text-muted mb-1.5">YOUR NAME</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  placeholder="Ada Lovelace"
+                  className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block font-mono text-xs text-muted mb-1.5">EMAIL</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="you@example.com"
+                  className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block font-mono text-xs text-muted mb-1.5">PASSWORD</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder="At least 6 characters"
+                  className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
+                />
+              </div>
+
+              {error && (
+                <p className="rounded-xl border border-danger/40 bg-danger/10 px-4 py-2 font-body text-sm text-danger">
+                  {error}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-xl py-3 font-display font-bold text-ink transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-60"
+                style={{ backgroundColor: "#58CC02", boxShadow: "0 0 20px #58CC0244" }}
+              >
+                {loading ? "Creating account…" : "Get Started"}
+              </button>
+            </form>
+          </div>
+
+          <p className="mt-6 text-center font-body text-sm text-muted">
+            Already have an account?{" "}
+            <Link to="/login" className="font-semibold text-xp hover:underline">
+              Log in
+            </Link>
           </p>
         </div>
-
-        {/* Card */}
-        <div className="rounded-2xl border border-line bg-surface p-6">
-          <h2 className="font-display text-xl font-bold text-offwhite mb-6">
-            Create your account 🚀
-          </h2>
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div>
-              <label className="block font-mono text-xs text-muted mb-1.5">YOUR NAME</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                placeholder="Ada Lovelace"
-                className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
-              />
-            </div>
-
-            <div>
-              <label className="block font-mono text-xs text-muted mb-1.5">EMAIL</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="you@example.com"
-                className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
-              />
-            </div>
-
-            <div>
-              <label className="block font-mono text-xs text-muted mb-1.5">PASSWORD</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                placeholder="At least 6 characters"
-                className="w-full rounded-xl border border-line bg-ink px-4 py-3 font-body text-sm text-offwhite placeholder:text-muted outline-none focus:border-xp transition-colors"
-              />
-            </div>
-
-            {error && (
-              <p className="rounded-xl border border-danger/40 bg-danger/10 px-4 py-2 font-body text-sm text-danger">
-                {error}
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-xl py-3 font-display font-bold text-ink transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-60"
-              style={{ backgroundColor: "#58CC02", boxShadow: "0 0 20px #58CC0244" }}
-            >
-              {loading ? "Creating account…" : "Get Started"}
-            </button>
-          </form>
-        </div>
-
-        <p className="mt-6 text-center font-body text-sm text-muted">
-          Already have an account?{" "}
-          <Link to="/login" className="font-semibold text-xp hover:underline">
-            Log in
-          </Link>
-        </p>
-        <Footer />
       </div>
+
+      {/* Footer sits at the bottom, outside the centered card */}
+      <Footer />
     </div>
   );
 }
