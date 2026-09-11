@@ -16,3 +16,45 @@ body {
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #14151A; }
 ::-webkit-scrollbar-thumb { background: #31333F; border-radius: 999px; }
+
+/* ── Lesson Complete & Streak Animations ─────────────────────────────── */
+
+@keyframes bounce-in {
+  0%   { transform: scale(0.3) translateY(40px); opacity: 0; }
+  55%  { transform: scale(1.15) translateY(-10px); opacity: 1; }
+  75%  { transform: scale(0.95) translateY(3px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes slide-up-fade {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10px) rotate(0deg) scale(1);    opacity: 1; }
+  100% { transform: translateY(105vh) rotate(540deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes streak-pop {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.25); opacity: 1; }
+  80%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes day-check {
+  0%   { transform: scale(0) rotate(-30deg); opacity: 0; }
+  65%  { transform: scale(1.2) rotate(5deg);  opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes xp-bump {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.25); }
+}
