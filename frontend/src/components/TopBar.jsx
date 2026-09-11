@@ -1,16 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // Mini pill component for each stat
-function StatPill({ icon, value, color, title, animate }) {
+function StatPill({ icon, value, color, title }) {
   return (
     <span
       title={title}
-      className="flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-sm font-semibold transition-transform"
+      className="flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-sm font-semibold"
       style={{
         color,
         borderColor: `${color}44`,
         backgroundColor: `${color}11`,
-        animation: animate ? "xp-bump 0.35s ease-out" : "none",
       }}
     >
       <span style={{ fontSize: 15 }}>{icon}</span>
@@ -31,27 +30,19 @@ export default function TopBar({ learner, onBack }) {
         {"<"}CodeLingo{"/>"}
       </button>
 
-      {/* Stats pills */}
+      {/* Stats + dashboard link */}
       {learner && (
         <div className="flex items-center gap-2">
-          <StatPill
-            icon="🔥"
-            value={learner.streak}
-            color="#FF9600"
-            title={`${learner.streak}-day streak`}
-          />
-          <StatPill
-            icon="⚡"
-            value={`${learner.xp} XP`}
-            color="#F5C242"
-            title="Total XP earned"
-          />
-          <StatPill
-            icon="♥"
-            value={learner.hearts}
-            color="#EF5D5D"
-            title="Hearts remaining"
-          />
+          <StatPill icon="🔥" value={learner.streak}      color="#FF9600" title={`${learner.streak}-day streak`} />
+          <StatPill icon="⚡" value={`${learner.xp} XP`} color="#F5C242" title="Total XP earned" />
+          <StatPill icon="♥"  value={learner.hearts}      color="#EF5D5D" title="Hearts remaining" />
+          <Link
+            to="/dashboard"
+            className="ml-1 flex h-8 w-8 items-center justify-center rounded-full border border-line bg-surface text-sm transition-colors hover:border-xp hover:text-xp"
+            title="Your Dashboard"
+          >
+            👤
+          </Link>
         </div>
       )}
     </header>
