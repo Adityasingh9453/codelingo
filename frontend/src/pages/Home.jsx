@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TopBar from "../components/TopBar.jsx";
 import TrackCard from "../components/TrackCard.jsx";
+import Footer from "../components/Footer.jsx";
 import { api } from "../api.js";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-ink">
+    <div className="min-h-screen bg-ink flex flex-col">
       <TopBar learner={data?.learner} />
 
       <main className="mx-auto max-w-3xl px-5 py-10">
@@ -40,6 +41,7 @@ export default function Home() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }

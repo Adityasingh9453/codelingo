@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../api.js";
 import { useAuth } from "../context/AuthContext.jsx";
 import TopBar from "../components/TopBar.jsx";
+import Footer from "../components/Footer.jsx";
 
 // XP → Level helper
 function xpToLevel(xp) {
@@ -242,6 +243,7 @@ export default function Dashboard() {
         </div>
 
       </main>
+      <Footer />
     </div>
   );
 }

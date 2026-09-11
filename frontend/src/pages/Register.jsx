@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../api.js";
 import { useAuth } from "../context/AuthContext.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -113,6 +114,7 @@ export default function Register() {
             Log in
           </Link>
         </p>
+        <Footer />
       </div>
     </div>
   );

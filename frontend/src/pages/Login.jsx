@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../api.js";
 import { useAuth } from "../context/AuthContext.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -96,6 +97,7 @@ export default function Login() {
             Sign up free
           </Link>
         </p>
+        <Footer />
       </div>
     </div>
   );
