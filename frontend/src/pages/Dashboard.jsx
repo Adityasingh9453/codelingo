@@ -103,7 +103,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-ink">
       <TopBar learner={learner} />
 
-      <main className="mx-auto max-w-lg px-5 py-8 space-y-8">
+      <main className="mx-auto max-w-2xl px-6 py-8 space-y-8">
 
         {/* ── Header ── */}
         <div
@@ -147,7 +147,7 @@ export default function Dashboard() {
               style={{
                 width: `${progress}%`,
                 background: "linear-gradient(90deg, #58CC02, #89E219)",
-                boxShadow: "0 0 10px #58CC0266",
+                boxShadow: "0 0 8px #5CB85C44",
               }}
             />
           </div>
@@ -236,7 +236,7 @@ export default function Dashboard() {
           <button
             onClick={() => navigate("/")}
             className="w-full rounded-2xl py-4 font-display text-base font-black tracking-wide text-ink transition-transform hover:scale-[1.02] active:scale-95"
-            style={{ backgroundColor: "#58CC02", boxShadow: "0 0 24px #58CC0244" }}
+            style={{ backgroundColor: "#5CB85C", boxShadow: "0 4px 14px #5CB85C33" }}
           >
             Continue Learning →
           </button>

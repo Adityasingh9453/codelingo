@@ -16,11 +16,11 @@ export default function Home() {
     <div className="min-h-screen bg-ink flex flex-col">
       <TopBar learner={data?.learner} />
 
-      <main className="mx-auto max-w-3xl px-5 py-10">
-        <h1 className="font-display text-3xl font-bold text-offwhite">
+      <main className="mx-auto max-w-5xl px-6 py-12">
+        <h1 className="font-display text-4xl sm:text-5xl font-bold text-offwhite leading-tight">
           Learn to code, one syntax rule at a time.
         </h1>
-        <p className="mt-2 max-w-md font-body text-muted">
+        <p className="mt-3 max-w-xl font-body text-base text-muted leading-relaxed">
           Pick a language. Short lessons, instant feedback, no setup required
           on your end — just tap and go.
         </p>
@@ -34,13 +34,14 @@ export default function Home() {
         )}
 
         {data && (
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {data.tracks.map((track) => (
               <TrackCard key={track.id} track={track} />
             ))}
           </div>
         )}
       </main>
+
       <Footer />
     </div>
   );

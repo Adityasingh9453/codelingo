@@ -86,7 +86,7 @@ export default function Login() {
                 type="submit"
                 disabled={loading}
                 className="w-full rounded-xl py-3 font-display font-bold text-ink transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-60"
-                style={{ backgroundColor: "#58CC02", boxShadow: "0 0 20px #58CC0244" }}
+                style={{ backgroundColor: "#5CB85C", boxShadow: "0 4px 14px #5CB85C33" }}
               >
                 {loading ? "Logging in…" : "Log In"}
               </button>

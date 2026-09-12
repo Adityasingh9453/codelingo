@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#14151A",
-        surface: "#1C1E26",
-        raised: "#23252F",
-        line: "#31333F",
-        muted: "#8B8D98",
-        offwhite: "#EDEDEF",
-        xp: "#6FCF63",
-        danger: "#EF5D5D",
+        ink: "#0D1117",
+        surface: "#161B27",
+        raised: "#1E2435",
+        line: "#2A3145",
+        muted: "#8892A4",
+        offwhite: "#E8EDF5",
+        xp: "#5CB85C",
+        danger: "#E05252",
         track: {
           c: "#F2A65A",
           cpp: "#6C8CFF",

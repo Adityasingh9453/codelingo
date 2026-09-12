@@ -19,7 +19,7 @@ export default function Footer() {
         </p>
 
         {/* Links — stack vertically on mobile, horizontal on sm+ */}
-        <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4 font-mono text-xs text-muted w-full">
+        <div className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4 font-mono text-xs text-muted w-full">
 
           <a
             href="https://github.com/Adityasingh9453"

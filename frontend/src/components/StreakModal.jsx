@@ -44,7 +44,7 @@ function DayCircle({ day, index }) {
     ? "#FF9600"
     : isToday && !completed
     ? "#FF960022"
-    : "#1C1E26";
+    : "#161B27";
 
   const border = completed || isToday ? "#FF9600" : "#31333F";
 
@@ -113,7 +113,7 @@ export default function StreakModal({ learner, onContinue }) {
             height: 0,
             borderLeft: "9px solid transparent",
             borderRight: "9px solid transparent",
-            borderTop: "11px solid #1E2028",
+            borderTop: "11px solid #161B27",
           }}
         />
       </div>
@@ -184,7 +184,7 @@ export default function StreakModal({ learner, onContinue }) {
           className="w-full rounded-2xl py-4 font-display text-lg font-black tracking-widest text-white transition-transform hover:scale-[1.03] active:scale-95"
           style={{
             backgroundColor: "#1CB0F6",
-            boxShadow: "0 0 24px #1CB0F688, 0 6px 24px #1CB0F655",
+            boxShadow: "0 4px 16px #1CB0F644",
           }}
         >
           I'M COMING BACK

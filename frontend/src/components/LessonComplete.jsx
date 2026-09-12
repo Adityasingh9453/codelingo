@@ -191,7 +191,7 @@ export default function LessonComplete({
           className="w-full rounded-2xl py-4 font-display text-lg font-black tracking-widest text-white transition-transform hover:scale-[1.03] active:scale-95"
           style={{
             backgroundColor: color,
-            boxShadow: `0 0 24px ${color}88, 0 6px 24px ${color}55`,
+            boxShadow: `0 4px 16px ${color}44`,
           }}
         >
           CLAIM XP
