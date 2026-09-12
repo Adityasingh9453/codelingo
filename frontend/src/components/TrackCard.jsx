@@ -1,23 +1,23 @@
 import { useNavigate } from "react-router-dom";
 
-// ── Language logo SVGs ────────────────────────────────────────────────────────
+// ── Language SVG logos (clean, no background box) ─────────────────────────────
 const LOGOS = {
   c: (
-    <svg viewBox="0 0 128 128" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <path fill="#03599C" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/>
       <path fill="#03599C" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/>
       <path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6z"/>
     </svg>
   ),
   cpp: (
-    <svg viewBox="0 0 128 128" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <path fill="#9C033A" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/>
       <path fill="#9C033A" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/>
       <path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM102.7 64h-5.4v-5.4h-5.3V64h-5.3v5.3h5.3v5.4h5.3v-5.4h5.4V64zM121.7 64h-5.4v-5.4h-5.3V64h-5.3v5.3h5.3v5.4h5.3v-5.4h5.4V64z"/>
     </svg>
   ),
   python: (
-    <svg viewBox="0 0 128 128" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <linearGradient id="py-a" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
         <stop offset="0" stopColor="#5A9FD4"/>
         <stop offset="1" stopColor="#306998"/>
@@ -31,7 +31,7 @@ const LOGOS = {
     </svg>
   ),
   java: (
-    <svg viewBox="0 0 128 128" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <path fill="#EA2D2E" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969z"/>
       <path fill="#EA2D2E" d="M44.629 84.455s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/>
       <path fill="#EA2D2E" d="M69.802 61.271c6.025 6.929-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/>
@@ -44,18 +44,6 @@ const LOGOS = {
   ),
 };
 
-// Fallback: show first 2 chars of name styled
-function FallbackIcon({ name, color }) {
-  return (
-    <div
-      className="flex items-center justify-center rounded-xl font-display text-xs font-black text-white"
-      style={{ width: 44, height: 44, backgroundColor: color }}
-    >
-      {name.slice(0, 2)}
-    </div>
-  );
-}
-
 export default function TrackCard({ track }) {
   const navigate = useNavigate();
   const pct = track.totalLessons
@@ -67,35 +55,39 @@ export default function TrackCard({ track }) {
   return (
     <button
       onClick={() => navigate(`/track/${track.id}`)}
-      className="group relative flex flex-col items-start gap-3 rounded-xl border border-line bg-surface p-5 text-left transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-lg"
-      style={{ "--track-color": track.color }}
+      className="group relative flex flex-col gap-4 rounded-xl border border-line bg-surface p-5 text-left transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-lg w-full"
     >
-      {/* left edge accent */}
+      {/* Left edge accent bar */}
       <span
         className="absolute left-0 top-4 bottom-4 w-1 rounded-full"
         style={{ backgroundColor: track.color }}
       />
 
-      <div className="pl-3 flex items-center gap-3">
-        {/* Language logo */}
-        <div
-          className="flex items-center justify-center rounded-xl shrink-0 overflow-hidden"
-          style={{
-            width: 48,
-            height: 48,
-            backgroundColor: `${track.color}18`,
-            border: `1.5px solid ${track.color}44`,
-          }}
-        >
-          {logo || <FallbackIcon name={track.name} color={track.color} />}
-        </div>
+      {/* Logo + Name row */}
+      <div className="flex items-center gap-3 pl-3">
+        {/* Language logo — bare SVG, no wrapping box */}
+        {logo ? (
+          <span className="shrink-0">{logo}</span>
+        ) : (
+          <span
+            className="shrink-0 font-display text-sm font-black"
+            style={{ color: track.color }}
+          >
+            {track.name}
+          </span>
+        )}
 
-        <div>
-          <h3 className="font-display text-xl font-semibold text-offwhite">{track.name}</h3>
-          <p className="mt-0.5 font-mono text-xs text-muted">// {track.tagline}</p>
+        <div className="min-w-0">
+          <h3 className="font-display text-xl font-semibold text-offwhite leading-tight">
+            {track.name}
+          </h3>
+          <p className="mt-0.5 font-body text-xs text-muted truncate">
+            {track.tagline}
+          </p>
         </div>
       </div>
 
+      {/* Progress bar */}
       <div className="w-full pl-3">
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-raised">
           <div
@@ -103,8 +95,8 @@ export default function TrackCard({ track }) {
             style={{ width: `${pct}%`, backgroundColor: track.color }}
           />
         </div>
-        <p className="mt-1.5 font-mono text-[11px] text-muted">
-          {track.completedLessons}/{track.totalLessons} lessons · {pct}%
+        <p className="mt-1.5 font-body text-[11px] text-muted">
+          {track.completedLessons} of {track.totalLessons} lessons completed
         </p>
       </div>
     </button>

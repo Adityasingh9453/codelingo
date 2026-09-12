@@ -111,7 +111,7 @@ export default function Dashboard() {
           style={{ animation: "slide-up-fade 0.4s ease-out both" }}
         >
           <div>
-            <p className="font-mono text-xs text-muted">// your stats</p>
+            <p className="font-body text-xs text-muted uppercase tracking-wide">Your Stats</p>
             <h1 className="font-display text-2xl font-black text-offwhite mt-0.5">
               Hey, {learner?.name?.split(" ")[0]} 👋
             </h1>
