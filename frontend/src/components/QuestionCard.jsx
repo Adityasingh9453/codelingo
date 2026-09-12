@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { playCorrect, playWrong } from "../sounds.js";
+
+// Fisher-Yates shuffle — runs once per question mount
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function QuestionCard({ question, color, onAnswered }) {
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
+
+  // Shuffle options once when the question mounts (key prop on parent ensures remount per question)
+  const shuffledOptions = useMemo(() => shuffle(question.options), [question.id]);
 
   const isFillBlank = question.type === "fill_blank";
   const isCorrect = selected === question.answer;
@@ -33,8 +46,8 @@ export default function QuestionCard({ question, color, onAnswered }) {
             className="mx-0.5 inline-block min-w-[3.5rem] rounded-md border-b-2 px-2 text-center font-semibold"
             style={{
               borderColor: color,
-              backgroundColor: revealed ? (isCorrect ? "#6FCF6333" : "#EF5D5D33") : "#31333F55",
-              color: revealed ? "#EDEDEF" : "transparent",
+              backgroundColor: revealed ? (isCorrect ? "#5CB85C33" : "#E0525233") : "#2A314555",
+              color: revealed ? "#E8EDF5" : "transparent",
             }}
           >
             {selected || "____"}
@@ -48,7 +61,7 @@ export default function QuestionCard({ question, color, onAnswered }) {
       )}
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {question.options.map((option) => {
+        {shuffledOptions.map((option) => {
           const isSelected = selected === option;
           const showCorrect = revealed && option === question.answer;
           const showWrong = revealed && isSelected && option !== question.answer;
