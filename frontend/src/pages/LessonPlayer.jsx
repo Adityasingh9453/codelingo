@@ -7,6 +7,7 @@ import StreakModal from "../components/StreakModal.jsx";
 import { api } from "../api.js";
 import { playHeartLost, playLessonComplete, playClick } from "../sounds.js";
 
+
 // phase: "playing" → "claiming" → "streaking"
 export default function LessonPlayer() {
   const { lessonId } = useParams();
@@ -16,7 +17,9 @@ export default function LessonPlayer() {
   const [learner, setLearner]         = useState(null);
   const [qIndex, setQIndex]           = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
+  const correctCountRef = useRef(0); // ref so handleNext sees latest value (no stale closure)
   const [canAdvance, setCanAdvance]   = useState(false);
+  const [finishing, setFinishing]     = useState(false); // prevents double-submit
   const [result, setResult]           = useState(null);
   const [phase, setPhase]             = useState("playing"); // "playing" | "claiming" | "streaking"
 
@@ -39,32 +42,54 @@ export default function LessonPlayer() {
   async function handleAnswered(wasCorrect) {
     setCanAdvance(true);
     if (wasCorrect) {
-      setCorrectCount((c) => c + 1);
+      correctCountRef.current += 1; // update ref immediately (no async batching)
+      setCorrectCount(correctCountRef.current);
     } else {
       playHeartLost();
-      const { hearts } = await api.loseHeart();
-      setLearner((l) => (l ? { ...l, hearts } : l));
+      try {
+        const { hearts } = await api.loseHeart();
+        setLearner((l) => (l ? { ...l, hearts } : l));
+      } catch (_) { /* heart loss is non-critical — ignore network errors */ }
     }
   }
 
   async function handleNext() {
+    if (finishing) return; // prevent double-click
     setCanAdvance(false);
+
     if (qIndex + 1 < lesson.questions.length) {
       setQIndex((i) => i + 1);
     } else {
-      // Calculate elapsed seconds before making the API call
+      // ── Last question: submit result ──
+      setFinishing(true);
       const elapsed = Math.round((Date.now() - (startTimeRef.current || Date.now())) / 1000);
       setElapsedSecs(elapsed);
 
-      const res = await api.completeLesson(lessonId, {
-        correctCount,
-        totalQuestions: lesson.questions.length,
-        trackId: lesson.trackId,
-      });
-      playLessonComplete();
-      setResult(res);
-      setLearner(res.learner);
-      setPhase("claiming");
+      try {
+        const res = await api.completeLesson(lessonId, {
+          correctCount: correctCountRef.current, // use ref — no stale closure
+          totalQuestions: lesson.questions.length,
+          trackId: lesson.trackId,
+        });
+        playLessonComplete();
+        setResult(res);
+        setLearner(res.learner);
+        setPhase("claiming");
+      } catch (err) {
+        console.error("completeLesson failed:", err);
+        // Still show completion screen with local data so user isn't stuck
+        const fallbackStars = correctCountRef.current === lesson.questions.length ? 3
+          : correctCountRef.current / lesson.questions.length >= 0.7 ? 2
+          : correctCountRef.current > 0 ? 1 : 0;
+        setResult({
+          stars: fallbackStars,
+          xpEarned: correctCountRef.current * 10,
+          learner,
+        });
+        setPhase("claiming");
+      } finally {
+        setFinishing(false);
+      }
     }
   }
 
@@ -135,10 +160,15 @@ export default function LessonPlayer() {
         {canAdvance && (
           <button
             onClick={() => { playClick(); handleNext(); }}
-            className="mt-6 w-full rounded-xl py-3 font-display font-semibold text-ink transition-transform hover:scale-[1.02] active:scale-95"
+            disabled={finishing}
+            className="mt-6 w-full rounded-xl py-3 font-display font-semibold text-ink transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
             style={{ backgroundColor: lesson.trackColor }}
           >
-            {qIndex + 1 < lesson.questions.length ? "Continue" : "Finish lesson"}
+            {finishing
+              ? "Saving…"
+              : qIndex + 1 < lesson.questions.length
+              ? "Continue"
+              : "Finish lesson"}
           </button>
         )}
       </main>
