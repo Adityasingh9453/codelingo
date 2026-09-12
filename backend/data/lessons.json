@@ -1,6 +1,863 @@
 {
   "tracks": [
     {
+      "id": "html",
+      "name": "HTML",
+      "tagline": "Structure the web with tags",
+      "color": "#E44D26",
+      "units": [
+        {
+          "id": "html-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "html-u1-l1",
+              "title": "Hello, Browser",
+              "questions": [
+                {
+                  "id": "html-u1-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What does HTML stand for?",
+                  "options": ["HyperText Markup Language", "High Transfer Markup Logic", "HyperText Managing Links", "Home Text Markup Language"],
+                  "answer": "HyperText Markup Language",
+                  "explanation": "HTML stands for HyperText Markup Language — it is the standard language for creating web pages."
+                },
+                {
+                  "id": "html-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is the correct file extension for an HTML file?",
+                  "options": [".css", ".html", ".js", ".xml"],
+                  "answer": ".html",
+                  "explanation": "HTML files use the .html (or .htm) extension and are opened by web browsers."
+                },
+                {
+                  "id": "html-u1-l1-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which tag is the root element of every HTML page?",
+                  "options": ["<body>", "<root>", "<head>", "<html>"],
+                  "answer": "<html>",
+                  "explanation": "The <html> element wraps the entire page and is the root of every HTML document."
+                },
+                {
+                  "id": "html-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: ____DOCTYPE html>\n<html>\n  <head></head>\n  <body></body>\n</html>",
+                  "options": ["//", "##", "<<", "<!"],
+                  "answer": "<!",
+                  "explanation": "<!DOCTYPE html> declares the document type and tells the browser this is an HTML5 document."
+                },
+                {
+                  "id": "html-u1-l1-q5",
+                  "type": "mcq",
+                  "prompt": "SELECT: What goes inside the <head> tag?",
+                  "options": ["Visible page content", "Images and videos", "Meta information, title, and links to CSS/JS", "Navigation menus"],
+                  "answer": "Meta information, title, and links to CSS/JS",
+                  "explanation": "The <head> contains metadata like the page title, charset, and links to stylesheets — nothing visible on the page itself."
+                },
+                {
+                  "id": "html-u1-l1-q6",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <____>My Page Title</title>",
+                  "options": ["head", "meta", "title", "name"],
+                  "answer": "title",
+                  "explanation": "The <title> tag sets the text shown in the browser tab."
+                },
+                {
+                  "id": "html-u1-l1-q7",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between the <head> and <body> sections of HTML?",
+                  "options": [
+                    "They are identical — both show content",
+                    "<head> holds page metadata (not displayed); <body> holds visible content",
+                    "<body> holds page metadata; <head> holds visible content",
+                    "<head> is for images; <body> is for text"
+                  ],
+                  "answer": "<head> holds page metadata (not displayed); <body> holds visible content",
+                  "explanation": "The <head> is for behind-the-scenes information (title, stylesheets, scripts). The <body> is what users actually see in the browser."
+                }
+              ]
+            },
+            {
+              "id": "html-u1-l2",
+              "title": "Tags & Elements",
+              "questions": [
+                {
+                  "id": "html-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is an HTML tag?",
+                  "options": [
+                    "A CSS property",
+                    "A JavaScript function",
+                    "A keyword surrounded by angle brackets like <p>",
+                    "A database record"
+                  ],
+                  "answer": "A keyword surrounded by angle brackets like <p>",
+                  "explanation": "HTML tags are keywords enclosed in < > brackets that tell the browser how to format content."
+                },
+                {
+                  "id": "html-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <p>Hello World____p>",
+                  "options": ["/<", "</", ">", "<"],
+                  "answer": "</",
+                  "explanation": "Most HTML elements need a closing tag written as </tagname> to mark where the element ends."
+                },
+                {
+                  "id": "html-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which tag creates the largest heading in HTML?",
+                  "options": ["<h6>", "<header>", "<h3>", "<h1>"],
+                  "answer": "<h1>",
+                  "explanation": "Headings go from <h1> (largest/most important) to <h6> (smallest). <h1> should be used once per page for the main title."
+                },
+                {
+                  "id": "html-u1-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which HTML element creates a hyperlink?",
+                  "options": ["<link>", "<href>", "<a>", "<url>"],
+                  "answer": "<a>",
+                  "explanation": "The <a> (anchor) element creates a clickable hyperlink. The destination URL goes in the href attribute."
+                },
+                {
+                  "id": "html-u1-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <a ____=\"https://google.com\">Visit Google</a>",
+                  "options": ["src", "link", "url", "href"],
+                  "answer": "href",
+                  "explanation": "The href attribute specifies the URL that the anchor link points to."
+                },
+                {
+                  "id": "html-u1-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between <div> and <span> in HTML?",
+                  "options": [
+                    "They are the same element with different names",
+                    "<div> is a block-level container; <span> is an inline container",
+                    "<span> is a block-level container; <div> is inline",
+                    "<div> is for images; <span> is for text"
+                  ],
+                  "answer": "<div> is a block-level container; <span> is an inline container",
+                  "explanation": "<div> takes up the full width (block), useful for layout sections. <span> wraps inline content without breaking the line flow."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "html-u2",
+          "title": "Forms & Semantics",
+          "lessons": [
+            {
+              "id": "html-u2-l1",
+              "title": "Forms & Input",
+              "questions": [
+                {
+                  "id": "html-u2-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: Which HTML element is used to create an interactive form?",
+                  "options": ["<input>", "<table>", "<form>", "<section>"],
+                  "answer": "<form>",
+                  "explanation": "The <form> element is the container for all interactive controls like text fields, buttons, and checkboxes."
+                },
+                {
+                  "id": "html-u2-l1-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <input ____ =\"text\" placeholder=\"Enter name\">",
+                  "options": ["kind", "name", "mode", "type"],
+                  "answer": "type",
+                  "explanation": "The type attribute on <input> controls what kind of input is shown (text, password, email, checkbox, etc.)."
+                },
+                {
+                  "id": "html-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which input type creates a submit button?",
+                  "options": ["type=\"link\"", "type=\"press\"", "type=\"button\"", "type=\"submit\""],
+                  "answer": "type=\"submit\"",
+                  "explanation": "type=\"submit\" creates a button that submits the form data to the server."
+                },
+                {
+                  "id": "html-u2-l1-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: What does the <label> element do in a form?",
+                  "options": [
+                    "Submits the form",
+                    "Styles the input",
+                    "Provides a clickable text description for an input field",
+                    "Groups multiple inputs"
+                  ],
+                  "answer": "Provides a clickable text description for an input field",
+                  "explanation": "<label> improves accessibility by giving a text description to a form control. Clicking the label focuses the linked input."
+                },
+                {
+                  "id": "html-u2-l1-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <input type=\"____\" name=\"agree\"> I agree",
+                  "options": ["radio", "select", "toggle", "checkbox"],
+                  "answer": "checkbox",
+                  "explanation": "type=\"checkbox\" creates a toggleable checkbox input."
+                },
+                {
+                  "id": "html-u2-l1-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between GET and POST methods in a form?",
+                  "options": [
+                    "GET sends data in the URL; POST sends it in the request body",
+                    "POST sends data in the URL; GET sends it in the body",
+                    "They are identical",
+                    "GET is for images; POST is for text"
+                  ],
+                  "answer": "GET sends data in the URL; POST sends it in the request body",
+                  "explanation": "GET appends form data to the URL (visible, bookmarkable). POST sends it hidden in the HTTP body — better for sensitive data."
+                }
+              ]
+            },
+            {
+              "id": "html-u2-l2",
+              "title": "Semantic HTML",
+              "questions": [
+                {
+                  "id": "html-u2-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What are semantic HTML elements?",
+                  "options": [
+                    "Tags that have no meaning",
+                    "Tags that only style the page",
+                    "Tags that clearly describe their meaning to both the browser and developer",
+                    "Tags used only for forms"
+                  ],
+                  "answer": "Tags that clearly describe their meaning to both the browser and developer",
+                  "explanation": "Semantic tags like <header>, <nav>, <article> describe the role of the content, improving accessibility and SEO."
+                },
+                {
+                  "id": "html-u2-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <____>\n  <a href=\"/\">Home</a>\n  <a href=\"/about\">About</a>\n</nav>",
+                  "options": ["menu", "links", "sidebar", "nav"],
+                  "answer": "nav",
+                  "explanation": "<nav> is a semantic element that wraps the main navigation links of a page."
+                },
+                {
+                  "id": "html-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which semantic element represents a self-contained piece of content?",
+                  "options": ["<div>", "<section>", "<article>", "<aside>"],
+                  "answer": "<article>",
+                  "explanation": "<article> represents standalone content that could be distributed independently, like a blog post or news story."
+                },
+                {
+                  "id": "html-u2-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: What is the purpose of the alt attribute on an <img> tag?",
+                  "options": [
+                    "Sets the image file path",
+                    "Controls image size",
+                    "Links image to another page",
+                    "Provides alternative text if the image fails to load"
+                  ],
+                  "answer": "Provides alternative text if the image fails to load",
+                  "explanation": "The alt attribute describes the image for screen readers and displays as fallback text when the image cannot be loaded."
+                },
+                {
+                  "id": "html-u2-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: <img ____=\"logo.png\" alt=\"Site logo\">",
+                  "options": ["href", "link", "path", "src"],
+                  "answer": "src",
+                  "explanation": "The src attribute specifies the path to the image file that should be displayed."
+                },
+                {
+                  "id": "html-u2-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: Why should you use semantic HTML instead of only <div> and <span>?",
+                  "options": [
+                    "Because <div> and <span> are deprecated",
+                    "Semantic HTML improves accessibility, SEO, and code readability",
+                    "Semantic HTML loads faster",
+                    "There is no difference"
+                  ],
+                  "answer": "Semantic HTML improves accessibility, SEO, and code readability",
+                  "explanation": "Semantic tags help screen readers understand page structure, help search engines index content properly, and make code easier for developers to read."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "name": "CSS",
+      "tagline": "Style the web beautifully",
+      "color": "#264DE4",
+      "units": [
+        {
+          "id": "css-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "css-u1-l1",
+              "title": "Hello, Styles",
+              "questions": [
+                {
+                  "id": "css-u1-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What does CSS stand for?",
+                  "options": ["Cascading Style Sheets", "Creative Styling System", "Colorful Site Syntax", "Computer Style Script"],
+                  "answer": "Cascading Style Sheets",
+                  "explanation": "CSS stands for Cascading Style Sheets. It controls how HTML elements look — colors, fonts, layout, and more."
+                },
+                {
+                  "id": "css-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: Which HTML tag is used to link an external CSS file?",
+                  "options": ["<style>", "<script>", "<link>", "<css>"],
+                  "answer": "<link>",
+                  "explanation": "The <link rel=\"stylesheet\" href=\"style.css\"> tag inside <head> connects an external CSS file to the HTML page."
+                },
+                {
+                  "id": "css-u1-l1-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: What is the correct CSS syntax to change text color to red?",
+                  "options": ["text: red;", "font-color: red;", "color = red;", "color: red;"],
+                  "answer": "color: red;",
+                  "explanation": "CSS uses property: value; syntax. The color property sets text color."
+                },
+                {
+                  "id": "css-u1-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: p ____\n  color: blue;\n}",
+                  "options": ["=>", ":", "(", "{"],
+                  "answer": "{",
+                  "explanation": "CSS rules use curly braces { } to wrap declarations. The selector (p) is followed by the opening brace."
+                },
+                {
+                  "id": "css-u1-l1-q5",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which CSS selector targets an element with id=\"header\"?",
+                  "options": [".header", "*header", "header", "#header"],
+                  "answer": "#header",
+                  "explanation": "The # prefix selects an element by its id attribute. IDs are unique per page."
+                },
+                {
+                  "id": "css-u1-l1-q6",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: ____btn {\n  background-color: green;\n}",
+                  "options": ["#", "@", "&", "."],
+                  "answer": ".",
+                  "explanation": "The . (dot) prefix selects elements by their class name. Multiple elements can share the same class."
+                },
+                {
+                  "id": "css-u1-l1-q7",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between class selectors (.) and id selectors (#) in CSS?",
+                  "options": [
+                    "There is no difference",
+                    "# is for multiple elements; . is for a single unique element",
+                    ". selects multiple elements sharing a class; # selects a single unique element by id",
+                    ". selects by tag name; # selects by attribute"
+                  ],
+                  "answer": ". selects multiple elements sharing a class; # selects a single unique element by id",
+                  "explanation": "Classes can be reused on many elements; IDs must be unique on a page. Use classes for repeating styles, IDs for one-off elements."
+                }
+              ]
+            },
+            {
+              "id": "css-u1-l2",
+              "title": "Colors & Typography",
+              "questions": [
+                {
+                  "id": "css-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: Which CSS property changes the font size of text?",
+                  "options": ["text-size", "font-weight", "text-scale", "font-size"],
+                  "answer": "font-size",
+                  "explanation": "font-size sets the size of text, e.g. font-size: 16px; or font-size: 1rem;"
+                },
+                {
+                  "id": "css-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: h1 {\n  ____: #FF5733;\n}",
+                  "options": ["background", "border", "text", "color"],
+                  "answer": "color",
+                  "explanation": "The color property sets the foreground (text) color of an element."
+                },
+                {
+                  "id": "css-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: How do you make text bold using CSS?",
+                  "options": ["font-style: bold;", "text-weight: heavy;", "font-weight: bold;", "text-bold: true;"],
+                  "answer": "font-weight: bold;",
+                  "explanation": "font-weight controls how thick/heavy the text appears. Values include bold, normal, or numeric weights like 700."
+                },
+                {
+                  "id": "css-u1-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which CSS property sets the background color of an element?",
+                  "options": ["color", "bg-color", "fill", "background-color"],
+                  "answer": "background-color",
+                  "explanation": "background-color sets the color behind an element's content, e.g. background-color: #1a1a2e;"
+                },
+                {
+                  "id": "css-u1-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: p {\n  font-____: Arial, sans-serif;\n}",
+                  "options": ["face", "style", "name", "family"],
+                  "answer": "family",
+                  "explanation": "font-family sets the typeface. You list fallback fonts separated by commas."
+                },
+                {
+                  "id": "css-u1-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between px, em, and rem units in CSS?",
+                  "options": [
+                    "They are all identical",
+                    "px is relative to parent; em is absolute; rem is relative to viewport",
+                    "px is an absolute pixel size; em is relative to parent font-size; rem is relative to root font-size",
+                    "rem is absolute; em and px are both relative"
+                  ],
+                  "answer": "px is an absolute pixel size; em is relative to parent font-size; rem is relative to root font-size",
+                  "explanation": "px gives a fixed size. em scales relative to the parent element's font size. rem always scales relative to the root <html> font size — making rem more predictable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "css-u2",
+          "title": "Layout & Box Model",
+          "lessons": [
+            {
+              "id": "css-u2-l1",
+              "title": "The Box Model",
+              "questions": [
+                {
+                  "id": "css-u2-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is the CSS Box Model?",
+                  "options": [
+                    "A 3D rendering technique",
+                    "A concept that treats every element as a rectangular box with content, padding, border, and margin",
+                    "A JavaScript animation library",
+                    "A way to create shapes"
+                  ],
+                  "answer": "A concept that treats every element as a rectangular box with content, padding, border, and margin",
+                  "explanation": "Every HTML element is a box. The box model defines how its total size is calculated: content + padding + border + margin."
+                },
+                {
+                  "id": "css-u2-l1-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: div {\n  ____: 20px;\n}",
+                  "options": ["space", "gap", "indent", "padding"],
+                  "answer": "padding",
+                  "explanation": "padding adds space inside the element, between the content and the border."
+                },
+                {
+                  "id": "css-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: What is the difference between padding and margin in CSS?",
+                  "options": [
+                    "They are the same thing",
+                    "Padding is space outside the element; margin is space inside",
+                    "Padding is space inside the element (between content and border); margin is space outside the element",
+                    "Margin affects the border width"
+                  ],
+                  "answer": "Padding is space inside the element (between content and border); margin is space outside the element",
+                  "explanation": "padding creates breathing room inside the box. margin creates space outside the box, separating it from other elements."
+                },
+                {
+                  "id": "css-u2-l1-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which CSS property adds a visible line around an element?",
+                  "options": ["outline-style", "shadow", "frame", "border"],
+                  "answer": "border",
+                  "explanation": "border draws a line around the element's edge. Example: border: 2px solid #333;"
+                },
+                {
+                  "id": "css-u2-l1-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: div {\n  box-____: border-box;\n}",
+                  "options": ["model", "type", "style", "sizing"],
+                  "answer": "sizing",
+                  "explanation": "box-sizing: border-box makes width/height include padding and border, preventing unexpected layout overflow."
+                },
+                {
+                  "id": "css-u2-l1-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What does box-sizing: border-box do?",
+                  "options": [
+                    "Adds a border to every element",
+                    "Removes all padding",
+                    "Makes the element's total size include padding and border within the declared width/height",
+                    "Sets the border to none"
+                  ],
+                  "answer": "Makes the element's total size include padding and border within the declared width/height",
+                  "explanation": "By default (content-box), width excludes padding and border. With border-box, padding and border are included — so width: 200px means 200px total."
+                }
+              ]
+            },
+            {
+              "id": "css-u2-l2",
+              "title": "Flexbox",
+              "questions": [
+                {
+                  "id": "css-u2-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is CSS Flexbox?",
+                  "options": [
+                    "A way to animate elements",
+                    "A one-dimensional layout model for arranging items in a row or column",
+                    "A 3D layout system",
+                    "A CSS preprocessor"
+                  ],
+                  "answer": "A one-dimensional layout model for arranging items in a row or column",
+                  "explanation": "Flexbox makes it easy to align and distribute space among items in a container, either in a row or column."
+                },
+                {
+                  "id": "css-u2-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: .container {\n  display: ____;\n}",
+                  "options": ["block", "grid", "inline", "flex"],
+                  "answer": "flex",
+                  "explanation": "display: flex turns an element into a flex container, enabling flexbox layout for its children."
+                },
+                {
+                  "id": "css-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which CSS property centers flex items horizontally?",
+                  "options": ["align-items: center", "text-align: center", "justify-items: center", "justify-content: center"],
+                  "answer": "justify-content: center",
+                  "explanation": "justify-content controls alignment along the main axis (horizontal in a row). center places items in the middle."
+                },
+                {
+                  "id": "css-u2-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: What does align-items: center do in a flex container?",
+                  "options": [
+                    "Centers items horizontally",
+                    "Centers items vertically along the cross axis",
+                    "Makes all items the same width",
+                    "Distributes items evenly"
+                  ],
+                  "answer": "Centers items vertically along the cross axis",
+                  "explanation": "align-items controls alignment on the cross axis (perpendicular to main axis). center aligns items vertically when flex-direction is row."
+                },
+                {
+                  "id": "css-u2-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: .container {\n  display: flex;\n  flex-____: column;\n}",
+                  "options": ["align", "wrap", "order", "direction"],
+                  "answer": "direction",
+                  "explanation": "flex-direction sets whether items are placed in a row (default) or column."
+                },
+                {
+                  "id": "css-u2-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between justify-content and align-items in Flexbox?",
+                  "options": [
+                    "They are the same property",
+                    "justify-content aligns on the main axis; align-items aligns on the cross axis",
+                    "align-items aligns on the main axis; justify-content aligns on the cross axis",
+                    "justify-content is for columns; align-items is for rows"
+                  ],
+                  "answer": "justify-content aligns on the main axis; align-items aligns on the cross axis",
+                  "explanation": "In a row flex container: justify-content is horizontal, align-items is vertical. They flip when flex-direction is column."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js",
+      "name": "JavaScript",
+      "tagline": "Make the web interactive",
+      "color": "#F7DF1E",
+      "units": [
+        {
+          "id": "js-u1",
+          "title": "First Steps",
+          "lessons": [
+            {
+              "id": "js-u1-l1",
+              "title": "Hello, Console",
+              "questions": [
+                {
+                  "id": "js-u1-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is JavaScript primarily used for?",
+                  "options": ["Styling web pages", "Storing data in databases", "Making web pages interactive", "Defining page structure"],
+                  "answer": "Making web pages interactive",
+                  "explanation": "JavaScript adds interactivity to web pages — responding to clicks, updating content dynamically, and communicating with servers."
+                },
+                {
+                  "id": "js-u1-l1-q2",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What extension do JavaScript files use?",
+                  "options": [".java", ".jscript", ".py", ".js"],
+                  "answer": ".js",
+                  "explanation": "JavaScript files use the .js extension. They are linked to HTML pages using a <script> tag."
+                },
+                {
+                  "id": "js-u1-l1-q3",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: console.____(\"Hello, World!\");",
+                  "options": ["print", "write", "output", "log"],
+                  "answer": "log",
+                  "explanation": "console.log() prints output to the browser's developer console — the standard way to debug JavaScript."
+                },
+                {
+                  "id": "js-u1-l1-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which keyword declares a variable that can be reassigned in modern JavaScript?",
+                  "options": ["var", "const", "fixed", "let"],
+                  "answer": "let",
+                  "explanation": "let declares a block-scoped variable that can be reassigned. const is for values that won't change. var is the older, less-preferred keyword."
+                },
+                {
+                  "id": "js-u1-l1-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: ____ name = \"Aditya\";",
+                  "options": ["var", "string", "int", "const"],
+                  "answer": "const",
+                  "explanation": "const declares a constant — a value that won't be reassigned. Prefer const over let unless you need to change the value."
+                },
+                {
+                  "id": "js-u1-l1-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between let and const in JavaScript?",
+                  "options": [
+                    "let is for strings; const is for numbers",
+                    "They are identical",
+                    "let allows reassignment; const does not allow reassignment after initialization",
+                    "const allows reassignment; let does not"
+                  ],
+                  "answer": "let allows reassignment; const does not allow reassignment after initialization",
+                  "explanation": "Use const for values you don't intend to change (most variables). Use let when you need to update the value later (e.g. a counter)."
+                },
+                {
+                  "id": "js-u1-l1-q7",
+                  "type": "mcq",
+                  "prompt": "RECALL: Where does JavaScript run — in the browser, server, or both?",
+                  "options": [
+                    "Only on the server",
+                    "Only in the browser",
+                    "Only on mobile devices",
+                    "In the browser (client-side) and also on servers via Node.js"
+                  ],
+                  "answer": "In the browser (client-side) and also on servers via Node.js",
+                  "explanation": "JavaScript was originally browser-only, but Node.js brought it to the server. Today it is the only language that runs natively on both client and server."
+                }
+              ]
+            },
+            {
+              "id": "js-u1-l2",
+              "title": "Variables & Types",
+              "questions": [
+                {
+                  "id": "js-u1-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: Which of these is a JavaScript string?",
+                  "options": ["42", "true", "\"Hello\"", "null"],
+                  "answer": "\"Hello\"",
+                  "explanation": "Strings are text values wrapped in quotes (single, double, or backtick). 42 is a number, true is a boolean."
+                },
+                {
+                  "id": "js-u1-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: const age = 21;\nconsole.log(____ age ____);",
+                  "options": ["`My age is` +", "`My age is ${", "\"My age is\" +", "`My age is ${"],
+                  "answer": "`My age is ${",
+                  "explanation": "Template literals use backticks and ${} to embed variables directly inside strings."
+                },
+                {
+                  "id": "js-u1-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: What does typeof 42 return in JavaScript?",
+                  "options": ["\"integer\"", "\"float\"", "\"number\"", "\"int\""],
+                  "answer": "\"number\"",
+                  "explanation": "JavaScript has one numeric type called number for both integers and decimals. typeof returns the type as a string."
+                },
+                {
+                  "id": "js-u1-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: Which value represents 'nothing intentionally' in JavaScript?",
+                  "options": ["0", "false", "undefined", "null"],
+                  "answer": "null",
+                  "explanation": "null means an intentional absence of a value (you set it deliberately). undefined means a variable exists but hasn't been assigned a value yet."
+                },
+                {
+                  "id": "js-u1-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: const items = [1, 2, 3];\nconsole.log(items.____);",
+                  "options": ["size", "count", "total", "length"],
+                  "answer": "length",
+                  "explanation": "The .length property returns the number of items in an array."
+                },
+                {
+                  "id": "js-u1-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between == and === in JavaScript?",
+                  "options": [
+                    "== checks type only; === checks value only",
+                    "They are identical",
+                    "== checks value with type coercion; === checks value and type strictly",
+                    "=== is for strings only; == is for numbers"
+                  ],
+                  "answer": "== checks value with type coercion; === checks value and type strictly",
+                  "explanation": "== converts types before comparing (5 == \"5\" is true). === requires same type and value (5 === \"5\" is false). Always prefer === to avoid bugs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "js-u2",
+          "title": "Functions & DOM",
+          "lessons": [
+            {
+              "id": "js-u2-l1",
+              "title": "Functions",
+              "questions": [
+                {
+                  "id": "js-u2-l1-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is a function in JavaScript?",
+                  "options": [
+                    "A CSS property",
+                    "A type of variable",
+                    "A reusable block of code that runs when called",
+                    "A loop construct"
+                  ],
+                  "answer": "A reusable block of code that runs when called",
+                  "explanation": "Functions let you define logic once and reuse it anywhere. They can accept inputs (parameters) and return outputs."
+                },
+                {
+                  "id": "js-u2-l1-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: ____ greet(name) {\n  return \"Hello, \" + name;\n}",
+                  "options": ["def", "fn", "method", "function"],
+                  "answer": "function",
+                  "explanation": "The function keyword declares a named function in JavaScript."
+                },
+                {
+                  "id": "js-u2-l1-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: What is an arrow function in JavaScript?",
+                  "options": [
+                    "A function that only runs once",
+                    "A compact function syntax using => instead of the function keyword",
+                    "A function with no parameters",
+                    "A function that returns nothing"
+                  ],
+                  "answer": "A compact function syntax using => instead of the function keyword",
+                  "explanation": "Arrow functions (const add = (a, b) => a + b;) are a shorter syntax introduced in ES6. They also don't have their own 'this'."
+                },
+                {
+                  "id": "js-u2-l1-q4",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: const square = (n) ____ n * n;",
+                  "options": ["->", "=>", "::", ">>"],
+                  "answer": "=>",
+                  "explanation": "=> is the arrow syntax for arrow functions. (n) => n * n is equivalent to function(n) { return n * n; }"
+                },
+                {
+                  "id": "js-u2-l1-q5",
+                  "type": "mcq",
+                  "prompt": "SELECT: What does a function return if there is no return statement?",
+                  "options": ["0", "false", "null", "undefined"],
+                  "answer": "undefined",
+                  "explanation": "If a function has no return statement (or just return; with no value), it returns undefined."
+                },
+                {
+                  "id": "js-u2-l1-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between a function declaration and a function expression?",
+                  "options": [
+                    "There is no difference",
+                    "Declarations are hoisted and available before their code line; expressions are not hoisted",
+                    "Expressions are hoisted; declarations are not",
+                    "Declarations cannot return values"
+                  ],
+                  "answer": "Declarations are hoisted and available before their code line; expressions are not hoisted",
+                  "explanation": "function greet() {} is hoisted — you can call it before it appears in code. const greet = function() {} is an expression and cannot be called before its line."
+                }
+              ]
+            },
+            {
+              "id": "js-u2-l2",
+              "title": "DOM & Events",
+              "questions": [
+                {
+                  "id": "js-u2-l2-q1",
+                  "type": "mcq",
+                  "prompt": "IDENTIFY: What is the DOM?",
+                  "options": [
+                    "A CSS framework",
+                    "A server-side API",
+                    "Document Object Model — JavaScript's representation of the HTML page",
+                    "A JavaScript testing library"
+                  ],
+                  "answer": "Document Object Model — JavaScript's representation of the HTML page",
+                  "explanation": "The DOM is a tree-like representation of the HTML document. JavaScript uses it to read and modify page content dynamically."
+                },
+                {
+                  "id": "js-u2-l2-q2",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: const btn = document.____(\"#submit\");",
+                  "options": ["find", "get", "select", "querySelector"],
+                  "answer": "querySelector",
+                  "explanation": "document.querySelector() returns the first element matching a CSS selector string."
+                },
+                {
+                  "id": "js-u2-l2-q3",
+                  "type": "mcq",
+                  "prompt": "SELECT: How do you change the text content of a DOM element?",
+                  "options": [
+                    "element.innerHTML = \"text\"",
+                    "element.value = \"text\"",
+                    "element.src = \"text\"",
+                    "element.textContent = \"text\""
+                  ],
+                  "answer": "element.textContent = \"text\"",
+                  "explanation": "textContent sets or gets the text inside an element, safely without parsing HTML. Use innerHTML only when you need to insert actual HTML tags."
+                },
+                {
+                  "id": "js-u2-l2-q4",
+                  "type": "mcq",
+                  "prompt": "SELECT: What method attaches an event listener to a DOM element?",
+                  "options": ["element.on()", "element.listen()", "element.bind()", "element.addEventListener()"],
+                  "answer": "element.addEventListener()",
+                  "explanation": "addEventListener(eventType, handler) registers a function to run when the specified event (like 'click') occurs on the element."
+                },
+                {
+                  "id": "js-u2-l2-q5",
+                  "type": "fill_blank",
+                  "prompt": "COMPLETE: btn.addEventListener('____', () => {\n  console.log('clicked!');\n});",
+                  "options": ["press", "tap", "touch", "click"],
+                  "answer": "click",
+                  "explanation": "The 'click' event fires when the user clicks on an element."
+                },
+                {
+                  "id": "js-u2-l2-q6",
+                  "type": "mcq",
+                  "prompt": "RECALL: What is the difference between innerHTML and textContent?",
+                  "options": [
+                    "They are identical",
+                    "innerHTML is faster; textContent is slower",
+                    "textContent is only for inputs; innerHTML is for all elements",
+                    "innerHTML parses and renders HTML tags; textContent treats everything as plain text"
+                  ],
+                  "answer": "innerHTML parses and renders HTML tags; textContent treats everything as plain text",
+                  "explanation": "innerHTML can insert actual HTML (e.g. <b>bold</b> makes text bold). textContent inserts raw text — safer against XSS injection attacks."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "c",
       "name": "C",
       "tagline": "Learn the language machines speak",

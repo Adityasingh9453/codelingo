@@ -12,6 +12,20 @@ function xpToLevel(xp) {
   return { level, progress };
 }
 
+// Short label for track icon badge
+const TRACK_LABELS = {
+  html: "HTM",
+  css: "CSS",
+  js: "JS",
+  c: "C",
+  cpp: "C++",
+  python: "Py",
+  java: "Java",
+};
+function trackLabel(t) {
+  return TRACK_LABELS[t.id] ?? t.name.slice(0, 3);
+}
+
 // ── Stat card ─────────────────────────────────────────────────────────────────
 function StatCard({ icon, label, value, color, delay = 0 }) {
   return (
@@ -183,7 +197,7 @@ export default function Dashboard() {
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl font-display text-xs font-black text-ink"
                     style={{ backgroundColor: t.color }}
                   >
-                    {t.name.slice(0, 2)}
+                    {trackLabel(t)}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-baseline">
