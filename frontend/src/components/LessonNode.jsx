@@ -1,43 +1,102 @@
 import { useNavigate } from "react-router-dom";
 
-const STAR_CHARS = ["", "★☆☆", "★★☆", "★★★"];
+const OFFSETS = [0, 80, 130, 80, 0, -80, -130, -80]; // snake path horizontal offsets
 
-export default function LessonNode({ lesson, color, index, isLast }) {
+export default function LessonNode({ lesson, color, index, isLast, totalLessons }) {
   const navigate = useNavigate();
-  const align = index % 2 === 0 ? "self-start" : "self-end";
   const locked = !lesson.unlocked;
+  const done = lesson.stars > 0;
+
+  // Zigzag horizontal offset for map-like snake path
+  const xOffset = OFFSETS[index % OFFSETS.length];
 
   return (
-    <div className={`relative flex w-1/2 flex-col items-center ${align}`}>
+    <div
+      className="relative flex flex-col items-center"
+      style={{
+        marginLeft: `calc(50% + ${xOffset}px - 48px)`,
+        animation: `slide-up-fade 0.4s ${index * 0.07}s ease-out both`,
+      }}
+    >
+      {/* ── Connector line upward (SVG curved path) ── */}
+      {index > 0 && (
+        <svg
+          className="absolute"
+          style={{ top: -72, left: "50%", transform: "translateX(-50%)", overflow: "visible" }}
+          width="4"
+          height="72"
+          viewBox="0 0 4 72"
+        >
+          <line
+            x1="2" y1="0" x2="2" y2="72"
+            stroke={done ? color : "#2A3145"}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray={done ? "none" : "8 6"}
+          />
+        </svg>
+      )}
+
+      {/* ── Node button ── */}
       <button
         disabled={locked}
         onClick={() => navigate(`/lesson/${lesson.id}`)}
-        className={`flex h-20 w-20 flex-col items-center justify-center rounded-2xl border-2 font-display text-sm font-semibold transition-transform ${
+        className={`relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-4 font-display font-black transition-all duration-200 ${
           locked
             ? "cursor-not-allowed border-line bg-surface text-muted"
-            : "border-transparent text-ink hover:scale-105 active:scale-95"
+            : done
+            ? "cursor-pointer border-white/20 text-ink hover:scale-110 active:scale-95"
+            : "cursor-pointer border-white/30 text-ink hover:scale-110 active:scale-95"
         }`}
-        style={locked ? {} : { backgroundColor: color }}
+        style={
+          locked
+            ? { boxShadow: "none" }
+            : {
+                backgroundColor: color,
+                boxShadow: `0 0 0 6px ${color}33, 0 8px 24px ${color}55`,
+              }
+        }
+        aria-label={lesson.title}
       >
-        {locked ? "🔒" : lesson.stars > 0 ? "✓" : index + 1}
+        {locked ? (
+          <span className="text-3xl">🔒</span>
+        ) : done ? (
+          <span className="text-4xl">✦</span>
+        ) : (
+          <span className="text-3xl font-black" style={{ color: "#0D1117" }}>
+            {index + 1}
+          </span>
+        )}
+
+        {/* Pulse ring on active (next to complete) */}
+        {!locked && !done && (
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full animate-ping opacity-30"
+            style={{ backgroundColor: color }}
+          />
+        )}
       </button>
-      <p className="mt-2 max-w-[8rem] text-center font-body text-xs text-offwhite">
+
+      {/* ── Stars ── */}
+      <div className="mt-2 flex gap-0.5">
+        {[1, 2, 3].map((s) => (
+          <span
+            key={s}
+            className="text-sm"
+            style={{ color: s <= lesson.stars ? "#F5C242" : "#2A3145" }}
+          >
+            ★
+          </span>
+        ))}
+      </div>
+
+      {/* ── Title ── */}
+      <p
+        className="mt-1 max-w-[9rem] text-center font-body text-xs font-medium leading-tight"
+        style={{ color: locked ? "#4A5568" : "#E8EDF5" }}
+      >
         {lesson.title}
       </p>
-      {lesson.stars > 0 && (
-        <p className="font-mono text-[10px] text-yellow-400">{STAR_CHARS[lesson.stars]}</p>
-      )}
-      {!isLast && (
-        <span
-          aria-hidden
-          className="absolute top-20 h-16 w-8 border-b-2 border-dashed border-line"
-          style={{
-            [index % 2 === 0 ? "left" : "right"]: "2.4rem",
-            borderRight: index % 2 === 0 ? "2px dashed #31333F" : "none",
-            borderLeft: index % 2 !== 0 ? "2px dashed #31333F" : "none",
-          }}
-        />
-      )}
     </div>
   );
 }
