@@ -80,7 +80,8 @@ function DayCircle({ day, index }) {
 
 // ── StreakModal ────────────────────────────────────────────────────────────────
 export default function StreakModal({ learner, onContinue }) {
-  const { streak = 0, last_active_date } = learner;
+  // Safely handle null/undefined learner to prevent crash → stuck screen
+  const { streak = 0, last_active_date } = learner ?? {};
   const days = getWeekDays(streak, last_active_date);
 
   const speechText =

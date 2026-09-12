@@ -119,10 +119,10 @@ export default function LessonPlayer() {
   }
 
   // ── Phase: STREAKING (streak celebration screen) ──────────────────────────
-  if (phase === "streaking" && result) {
+  if (phase === "streaking") {
     return (
       <StreakModal
-        learner={result.learner}
+        learner={learner ?? result?.learner}
         onContinue={handleContinue}
       />
     );
